@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.perry.archmybatis.dao.UmsResourceDao">
+
+    <resultMap id="BaseResultMap" type="com.perry.archmybatis.model.UmsResource">
+        <id property="id" column="id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="name" column="name"/>
+        <result property="url" column="url"/>
+        <result property="description" column="description"/>
+        <result property="categoryId" column="category_id"/>
+    </resultMap>
+
+    <select id="selectResourceWithCategory" resultType="com.perry.archmybatis.domain.UmsResourceExt">
+        SELECT ur.id,
+               ur.create_time  as createTime,
+               ur.name,
+               ur.url,
+               ur.description,
+               ur.category_id  as categoryId,
+               uc.name as "category.name",
+               uc.id as "category.id",
+               uc.sort as "category.sort",
+               uc.create_time as "category.createTime"
+        FROM ums_resource ur
+        LEFT JOIN ums_resource_category uc ON ur.category_id = uc.id
+        WHERE ur.id = #{id}
+    </select>
+
+    <select id="selectResourceWithCategory2" resultMap="ResourceWithCategoryMap">
+        SELECT ur.id,
+               ur.create_time  as createTime,
+               ur.name,
+               ur.url,
+               ur.description,
+               ur.category_id,
+               uc.name as categoryName,
+               uc.id as categoryId,
+               uc.sort as categorySort,
+               uc.create_time as categoryCreateTime
+        FROM ums_resource ur
+        LEFT JOIN ums_resource_category uc ON ur.category_id = uc.id
+        WHERE ur.id = #{id}
+    </select>
+
+    <resultMap id="ResourceWithCategoryMap" type="com.perry.archmybatis.domain.UmsResourceExt">
+        <id property="id" column="id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="name" column="name"/>
+        <result property="url" column="url"/>
+        <result property="description" column="description"/>
+        <result property="categoryId" column="category_id"/>
+        <association property="category" javaType="com.perry.archmybatis.model.UmsResourceCategory">
+            <id property="id" column="categoryId"/>
+            <result property="name" column="categoryName"/>
+            <result property="sort" column="categorySort"/>
+            <result property="createTime" column="categoryCreateTime"/>
+        </association>
+    </resultMap>
+
+    <select id="selectByCategoryId" resultMap="BaseResultMap">
+        SELECT id,
+               create_time  as createTime,
+               name,
+               url,
+               description,
+               category_id
+        FROM ums_resource
+        WHERE category_id = #{categoryId}
+    </select>
+</mapper>

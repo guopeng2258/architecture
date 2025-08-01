@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.perry.archmybatis.dao.UmsAdminDao">
+    
+    <!-- 定义UmsAdmin实体的 resultMap -->
+    <resultMap id="umsAdminMap" type="com.perry.archmybatis.model.UmsAdmin">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="icon" property="icon"/>
+        <result column="email" property="email"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="note" property="note"/>
+        <result column="create_time" property="createTime"/>
+        <result column="login_time" property="loginTime"/>
+        <result column="status" property="status"/>
+    </resultMap>
+    
+    <!-- 定义字段列表 -->
+    <sql id="umsAdminColumns">
+        id, username, password, icon, email, nick_name, note, create_time, login_time, status
+    </sql>
+    
+    <!-- 插入后台用户 -->
+    <insert id="insert" parameterType="com.perry.archmybatis.model.UmsAdmin" useGeneratedKeys="true" keyProperty="id">
+        <!--
+            useGeneratedKeys="true" 表示使用数据库自动生成的主键（如自增ID）
+            keyProperty="id" 表示将生成的主键值回写到实体类的 id 属性中
+        -->
+        INSERT INTO ums_admin (
+            username, password, icon, email, nick_name, note, create_time, login_time, status
+        ) VALUES (
+            #{username}, #{password}, #{icon}, #{email}, #{nickName}, #{note}, 
+            #{createTime}, #{loginTime}, #{status}
+        )
+    </insert>
+
+    <insert id="insertBatch" parameterType="com.perry.archmybatis.model.UmsAdmin" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO ums_admin (
+            username, password, icon, email, nick_name, note, create_time, login_time, status
+        ) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (
+                #{item.username}, #{item.password}, #{item.icon}, #{item.email}, #{item.nickName}, #{item.note},
+                #{item.createTime}, #{item.loginTime}, #{item.status}
+            )
+        </foreach>
+    </insert>
+    
+    <!-- 根据ID删除后台用户 -->
+    <delete id="deleteById">
+        DELETE FROM ums_admin WHERE id = #{id}
+    </delete>
+
+    <!-- 更新用户信息-->
+    <update id="update">
+        update ums_admin
+        set username = #{username},
+            password = #{password},
+            icon = #{icon},
+            email = #{email},
+            nick_name = #{nickName},
+            note = #{note},
+            create_time = #{createTime},
+            login_time = #{loginTime}
+        where id = #{id}
+    </update>
+    <!-- 根据输入的参数更新后台用户信息 -->
+    <update id="updateBySelective" parameterType="com.perry.archmybatis.model.UmsAdmin">
+        UPDATE ums_admin
+        <set>
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="icon != null and icon != ''">
+                icon = #{icon},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="nickName != null and nickName != ''">
+                nick_name = #{nickName},
+            </if>
+            <if test="note != null and note != ''">
+                note = #{note},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="loginTime != null">
+                login_time = #{loginTime},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+    
+    <!-- 根据ID查询后台用户 -->
+    <select id="selectById" resultMap="umsAdminMap">
+        SELECT <include refid="umsAdminColumns"/>
+        FROM ums_admin
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectByIds" resultMap="umsAdminMap">
+        SELECT <include refid="umsAdminColumns"/>
+        FROM ums_admin
+        WHERE id IN
+        <foreach collection="ids" item = "item" open = "(" close = ")" separator="," >
+        #{item}
+        </foreach>
+    </select>
+
+    <select id="selectByUsernameAndEmailLike" resultMap="umsAdminMap">
+        SELECT <include refid="umsAdminColumns"/>
+        FROM ums_admin
+        WHERE 1=1
+        <if test="username != null and username != ''">
+            AND username LIKE CONCAT('%', #{username}, '%')
+        </if>
+        <if test="email != null and email != ''">
+            AND email LIKE CONCAT('%', #{email}, '%')
+        </if>
+    </select>
+
+    <select id="selectByUsernameAndEmailLike2" resultMap="umsAdminMap">
+        SELECT <include refid="umsAdminColumns"/>
+        FROM ums_admin
+        WHERE 1=1
+        <choose>
+            <when test="username != null and username != ''">
+                AND username LIKE CONCAT('%', #{username}, '%')
+            </when>
+            <when test="email != null and email != ''">
+                AND email LIKE CONCAT('%', #{email}, '%')
+            </when>
+            <otherwise>
+                AND 1=0
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="selectByUsernameAndEmailLike3" resultMap="umsAdminMap">
+        SELECT <include refid="umsAdminColumns"/>
+        FROM ums_admin
+        <where>
+            <if test="username != null and username != ''">
+                AND username LIKE CONCAT('%', #{username}, '%')
+            </if>
+            <if test="email != null and email != ''">
+                AND email LIKE CONCAT('%', #{email}, '%')
+            </if>
+        </where>
+    </select>
+    
+    <!-- 查询所有后台用户 -->
+    <select id="selectAll" resultMap="umsAdminMap">
+        SELECT <include refid="umsAdminColumns"/>
+        FROM ums_admin
+    </select>
+    
+    <!-- 根据用户名查询后台用户 -->
+    <select id="selectByUsername" resultMap="umsAdminMap">
+        SELECT <include refid="umsAdminColumns"/>
+        FROM ums_admin
+        WHERE username = #{username}
+    </select>
+
+
+    
+</mapper>
