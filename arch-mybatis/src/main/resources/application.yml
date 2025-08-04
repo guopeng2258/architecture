@@ -25,3 +25,7 @@ logging:
     root: info
     com.perry.archmybatis: debug
 
+# 解决Springfox与Spring Boot 2.6+兼容性问题
+springfox:
+  documentation:
+    auto-startup: false

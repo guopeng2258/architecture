@@ -64,12 +64,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql-connector.version}</version>
 		</dependency>
-		<!--Springfox swagger官方starter-->
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>${springfox-swagger.version}</version>
-		</dependency>
+
 		<!--lombok-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
