@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/mbg/pom.xml" />
         <option value="$PROJECT_DIR$/arch-mbg/pom.xml" />
+        <option value="$PROJECT_DIR$/tiny-1/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
