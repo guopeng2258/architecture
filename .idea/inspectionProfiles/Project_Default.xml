@@ -9,15 +9,36 @@
       <option name="ignoredModules">
         <list>
           <option value="arch-mybatis" />
+          <option value="arch-swagger" />
+          <option value="arch-swagger" />
+          <option value="arch-swagger" />
+          <option value="arch-swagger" />
+          <option value="arch-swagger" />
+          <option value="arch-swagger" />
+          <option value="arch-swagger" />
         </list>
       </option>
       <option name="ignoredPackages">
         <list>
           <option value="ch.qos.logback:logback-classic:1.2.11" />
+          <option value="io.github.classgraph:classgraph:4.8.83" />
+          <option value="mysql:mysql-connector-java:8.0.29" />
+          <option value="com.jayway.jsonpath:json-path:2.7.0" />
+          <option value="net.minidev:json-smart:2.4.8" />
+          <option value="org.xmlunit:xmlunit-core:2.9.0" />
+          <option value="org.springframework.boot:spring-boot-actuator-autoconfigure:2.7.5" />
+          <option value="ch.qos.logback:logback-classic:1.2.11" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
         </list>
       </option>
