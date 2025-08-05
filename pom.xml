@@ -15,6 +15,11 @@
 
     <modules>
         <module>arch-mybatis</module>
+        <module>arch-mbg</module>
+        <module>arch-swagger</module>
+        <module>tiny-1</module>
+        <module>tiny-2</module>
+        <module>tiny-3</module>
     </modules>
 
     <parent>
