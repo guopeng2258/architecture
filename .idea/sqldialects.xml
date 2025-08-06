@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/arch-mybatis/src/main/resources/dao/UmsAdminDao.xml" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/arch-mybatis/src/main/resources/dao/UmsResourceCategoryDao.xml" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/arch-mybatis/src/main/resources/dao/UmsResourceDao.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/tiny-5/src/main/resources/dao/EsProductDao.xml" dialect="GenericSQL" />
   </component>
 </project>
