@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="tiny-6" />
         <module name="tiny-5" />
         <module name="arch-swagger" />
         <module name="arch-mybatis" />
@@ -17,6 +18,9 @@
         <module name="arch-mbg" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tiny-5 (1)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -28,6 +32,8 @@
       <module name="tiny-3" options="-parameters" />
       <module name="tiny-4" options="-parameters" />
       <module name="tiny-5" options="-parameters" />
+      <module name="tiny-5 (1)" options="-parameters" />
+      <module name="tiny-6" options="-parameters" />
     </option>
   </component>
 </project>

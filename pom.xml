@@ -21,6 +21,8 @@
         <module>tiny-2</module>
         <module>tiny-3</module>
         <module>tiny-4</module>
+        <module>tiny-5</module>
+        <module>tiny-6</module>
     </modules>
 
     <parent>
