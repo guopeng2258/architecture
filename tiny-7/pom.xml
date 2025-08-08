@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tiny-6</artifactId>
+    <artifactId>tiny-7</artifactId>
     <version>1.0.0</version>
-    <name>tiny-6</name>
-    <description>tiny-6:a project include lombok、mybatis、swagger、redis、SpringSecurity、JWT、Lombok、Hutool、SpringDataRedis
-    es、mongo</description>
+    <name>tiny-7</name>
+    <description>tiny-7:a project include lombok、mybatis、swagger、redis、SpringSecurity、JWT、Lombok、Hutool、SpringDataRedis
+    es、mongo、rabbitMQ</description>
 
     <parent>
         <groupId>com.perry</groupId>
@@ -101,6 +101,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <!--Spring AMQP相关依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
     </dependencies>
 

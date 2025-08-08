@@ -10,6 +10,7 @@
         <module name="tiny-6" />
         <module name="tiny-5" />
         <module name="arch-swagger" />
+        <module name="tiny-7" />
         <module name="arch-mybatis" />
         <module name="tiny-2" />
         <module name="tiny-1" />
@@ -34,6 +35,7 @@
       <module name="tiny-5" options="-parameters" />
       <module name="tiny-5 (1)" options="-parameters" />
       <module name="tiny-6" options="-parameters" />
+      <module name="tiny-7" options="-parameters" />
     </option>
   </component>
 </project>
