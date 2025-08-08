@@ -16,7 +16,7 @@ spring:
     database: 0 # Redis数据库索引（默认为0）
     port: 6379 # Redis服务器连接端口
     password:  # Redis服务器连接密码（默认为空）
-#    username: default # Redis服务器连接用户名（可选）
+    username: default # Redis服务器连接用户名（可选）
     lettuce:
       pool:
         max-active: 8 # 连接池最大连接数

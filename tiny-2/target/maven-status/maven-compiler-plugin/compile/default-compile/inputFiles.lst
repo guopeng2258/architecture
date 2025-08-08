@@ -1,0 +1,15 @@
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/config/MyBatisConfig.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/service/impl/PmsBrandServiceImpl.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/common/api/ResultCode.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/config/Swagger2Config.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/mbg/model/PmsBrand.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/common/api/IErrorCode.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/mbg/mapper/PmsBrandMapper.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/mbg/CommentGenerator.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/common/api/CommonPage.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/mbg/model/PmsBrandExample.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/service/PmsBrandService.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/mbg/Generator.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/common/api/CommonResult.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/controller/PmsBrandController.java
+/Users/guopeng/IdeaPri/architecture/tiny-2/src/main/java/com/perry/tiny/TinyApplication.java
